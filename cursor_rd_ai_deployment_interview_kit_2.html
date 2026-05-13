@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[Interview Kit] Regional Director, AI Deployment — Cursor</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=DM+Mono:wght@400;500&display=swap');
+
+  :root {
+    --ink: #0f0f0e;
+    --ink2: #3a3935;
+    --ink3: #6b6a64;
+    --ink4: #9b9a93;
+    --surface: #ffffff;
+    --surface2: #f5f4f0;
+    --surface3: #eeede8;
+    --border: rgba(15,15,14,0.10);
+    --border2: rgba(15,15,14,0.18);
+    --accent: #1a1a18;
+    --blue: #1553c7;
+    --blue-bg: #edf2fd;
+    --green: #136b33;
+    --green-bg: #e8f5ee;
+    --amber: #8a4a00;
+    --amber-bg: #fdf3e1;
+    --red: #a82020;
+    --red-bg: #fdf0f0;
+    --purple: #5534b0;
+    --purple-bg: #f0edfc;
+    --teal: #0d6e56;
+    --teal-bg: #e5f4ef;
+    --tag-bg: #f0efe9;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--surface2);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    border-bottom: 1px solid var(--border2);
+    padding-bottom: 28px;
+    margin-bottom: 36px;
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 8px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .header-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  .meta-pill {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: var(--tag-bg);
+    border: 0.5px solid var(--border2);
+    color: var(--ink2);
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    margin-bottom: 40px;
+  }
+  .section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  /* ── ROLE OVERVIEW ── */
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .overview-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .overview-card h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 8px;
+  }
+  .overview-card p {
+    font-size: 13.5px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+  .overview-card.full { grid-column: 1 / -1; }
+
+  /* ── CAPABILITIES ── */
+  .cap-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .cap-group {
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .cap-group h4 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 12px;
+  }
+  .cap-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: var(--tag-bg);
+    border: 0.5px solid var(--border);
+    color: var(--ink2);
+    margin: 3px 3px 3px 0;
+    line-height: 1.4;
+  }
+  .cap-tag.blue { background: var(--blue-bg); color: var(--blue); border-color: rgba(21,83,199,0.18); }
+  .cap-tag.green { background: var(--green-bg); color: var(--green); border-color: rgba(19,107,51,0.18); }
+  .cap-tag.purple { background: var(--purple-bg); color: var(--purple); border-color: rgba(85,52,176,0.18); }
+  .cap-tag.teal { background: var(--teal-bg); color: var(--teal); border-color: rgba(13,110,86,0.18); }
+  .cap-tag.amber { background: var(--amber-bg); color: var(--amber); border-color: rgba(138,74,0,0.18); }
+
+  /* ── PROCESS TABLE ── */
+  .process-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .process-table thead tr {
+    background: var(--surface3);
+  }
+  .process-table th {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 0.5px solid var(--border2);
+  }
+  .process-table td {
+    padding: 11px 14px;
+    border-bottom: 0.5px solid var(--border);
+    color: var(--ink2);
+    vertical-align: top;
+  }
+  .process-table tr:last-child td { border-bottom: none; }
+  .process-table tr:hover td { background: var(--surface2); }
+  .stage-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-screen { background: var(--tag-bg); color: var(--ink3); border: 0.5px solid var(--border2); }
+  .badge-hm { background: var(--blue-bg); color: var(--blue); border: 0.5px solid rgba(21,83,199,0.18); }
+  .badge-peer { background: var(--purple-bg); color: var(--purple); border: 0.5px solid rgba(85,52,176,0.18); }
+  .badge-onsite { background: var(--green-bg); color: var(--green); border: 0.5px solid rgba(19,107,51,0.18); }
+  .badge-pres { background: var(--amber-bg); color: var(--amber); border: 0.5px solid rgba(138,74,0,0.18); }
+  .badge-xfn { background: var(--teal-bg); color: var(--teal); border: 0.5px solid rgba(13,110,86,0.18); }
+
+  /* ── INTERVIEW BLOCKS ── */
+  .interview-block {
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .interview-header {
+    padding: 18px 22px 14px;
+    border-bottom: 0.5px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .interview-num {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--ink4);
+    min-width: 20px;
+    padding-top: 2px;
+  }
+  .interview-title {
+    flex: 1;
+  }
+  .interview-title h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .interview-title .meta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+  }
+  .meta-chip {
+    font-size: 11.5px;
+    color: var(--ink3);
+    background: var(--tag-bg);
+    border: 0.5px solid var(--border);
+    border-radius: 20px;
+    padding: 2px 9px;
+  }
+  .interview-body {
+    padding: 0;
+  }
+
+  /* ── TABS ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 0.5px solid var(--border);
+    background: var(--surface2);
+    padding: 0 22px;
+  }
+  .tab-btn {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ink4);
+    padding: 10px 14px 10px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -0.5px;
+    transition: color 0.15s, border-color 0.15s;
+  }
+  .tab-btn.active {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+  }
+  .tab-btn:hover:not(.active) {
+    color: var(--ink2);
+  }
+  .tab-panel {
+    display: none;
+    padding: 20px 22px;
+  }
+  .tab-panel.active { display: block; }
+
+  /* ── PURPOSE / SIGNAL ── */
+  .purpose-box {
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    padding: 13px 16px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: var(--ink2);
+    line-height: 1.6;
+  }
+  .purpose-box strong {
+    font-weight: 600;
+    color: var(--ink);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* ── QUESTIONS ── */
+  .q-group {
+    margin-bottom: 22px;
+  }
+  .q-group-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink4);
+    margin-bottom: 10px;
+  }
+  .question-item {
+    border-left: 2px solid var(--border2);
+    padding: 10px 0 10px 14px;
+    margin-bottom: 8px;
+  }
+  .question-item:last-child { margin-bottom: 0; }
+  .question-text {
+    font-size: 13.5px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.55;
+    margin-bottom: 6px;
+  }
+  .question-probes {
+    padding-left: 14px;
+    list-style: none;
+  }
+  .question-probes li {
+    font-size: 12.5px;
+    color: var(--ink3);
+    padding: 2px 0;
+    position: relative;
+  }
+  .question-probes li::before {
+    content: '↳';
+    position: absolute;
+    left: -14px;
+    color: var(--ink4);
+    font-size: 11px;
+  }
+  .q-type-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 1px 7px;
+    border-radius: 20px;
+    margin-right: 6px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .qt-behavioral { background: var(--blue-bg); color: var(--blue); }
+  .qt-situational { background: var(--purple-bg); color: var(--purple); }
+  .qt-diagnostic { background: var(--teal-bg); color: var(--teal); }
+  .qt-fp { background: var(--amber-bg); color: var(--amber); }
+
+  /* ── WHAT GREAT / RED FLAGS ── */
+  .signal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 4px;
+  }
+  .signal-box {
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+  .signal-box.great {
+    background: var(--green-bg);
+    border: 0.5px solid rgba(19,107,51,0.2);
+  }
+  .signal-box.red {
+    background: var(--red-bg);
+    border: 0.5px solid rgba(168,32,32,0.2);
+  }
+  .signal-box h5 {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .signal-box.great h5 { color: var(--green); }
+  .signal-box.red h5 { color: var(--red); }
+  .signal-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .signal-box ul li {
+    font-size: 12.5px;
+    padding: 3px 0 3px 14px;
+    position: relative;
+    line-height: 1.5;
+  }
+  .signal-box.great ul li { color: #1c5a2e; }
+  .signal-box.red ul li { color: #7a1a1a; }
+  .signal-box.great ul li::before { content: '✓'; position: absolute; left: 0; font-size: 11px; }
+  .signal-box.red ul li::before { content: '✗'; position: absolute; left: 0; font-size: 11px; }
+
+  /* ── RUBRIC ── */
+  .rubric-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  .rubric-table thead tr {
+    background: var(--surface3);
+  }
+  .rubric-table th {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    padding: 9px 12px;
+    text-align: left;
+    border-bottom: 0.5px solid var(--border2);
+  }
+  .rubric-table td {
+    padding: 10px 12px;
+    border-bottom: 0.5px solid var(--border);
+    vertical-align: top;
+    color: var(--ink2);
+    line-height: 1.5;
+  }
+  .rubric-table tr:last-child td { border-bottom: none; }
+  .rubric-table td:first-child {
+    font-weight: 500;
+    color: var(--ink);
+    white-space: nowrap;
+    font-size: 12px;
+  }
+  .rubric-table td.weak { color: var(--red); background: rgba(168,32,32,0.04); }
+  .rubric-table td.ok { color: var(--amber); background: rgba(138,74,0,0.04); }
+  .rubric-table td.exc { color: var(--green); background: rgba(19,107,51,0.05); }
+  .rubric-table tr:hover td { background: var(--surface2); }
+  .rubric-table tr:hover td.weak { background: rgba(168,32,32,0.07); }
+  .rubric-table tr:hover td.ok { background: rgba(138,74,0,0.07); }
+  .rubric-table tr:hover td.exc { background: rgba(19,107,51,0.08); }
+
+  /* ── PRIYA CALLOUT ── */
+  .priya-box {
+    background: linear-gradient(135deg, #f7f6f2 0%, #f0efe9 100%);
+    border: 0.5px solid var(--border2);
+    border-left: 3px solid var(--ink);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+  }
+  .priya-box strong {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--ink3);
+    display: block;
+    margin-bottom: 6px;
+  }
+  .priya-box ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .priya-box ul li {
+    font-size: 12px;
+    background: var(--surface);
+    border: 0.5px solid var(--border2);
+    border-radius: 20px;
+    padding: 3px 10px;
+    color: var(--ink2);
+  }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 28px 0;
+  }
+
+  /* ── PRINT / MISC ── */
+  .footnote {
+    font-size: 12px;
+    color: var(--ink4);
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 20px; }
+    .tab-panel { display: block !important; }
+    .tabs { display: none; }
+    .interview-block { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">Interview Kit — Confidential</div>
+    <h1>[Interview Kit] Regional Director, AI Deployment</h1>
+    <div class="header-meta">
+      <span class="meta-pill">Hiring Manager: Priya Bhatia</span>
+      <span class="meta-pill">Recruiter: Heather Torres</span>
+      <span class="meta-pill">Region: US · SF / NYC (remote for strat)</span>
+      <span class="meta-pill">7 Stages</span>
+      <span class="meta-pill">Revised May 2026</span>
+    </div>
+    <div class="priya-box">
+      <strong>What Priya is optimizing for</strong>
+      <ul>
+        <li>Hiring fast</li>
+        <li>Renewals / GRR / churn control</li>
+        <li>Account coverage at scale</li>
+        <li>Enterprise post-sales motion</li>
+        <li>Repeatable playbooks without losing speed</li>
+        <li>Multithreaded exec engagement</li>
+        <li>Sales-aligned commercial instincts</li>
+        <li>ADM profile definition + team build</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ROLE OVERVIEW -->
+  <div class="section">
+    <div class="section-label">Role Overview</div>
+    <div class="overview-grid">
+      <div class="overview-card full">
+        <h4>Why this role exists now</h4>
+        <p>Cursor is scaling post-sales fast to meet enterprise demand. This leader owns the ADM team, sets the operating standard for how strategic customers deploy and adopt AI at scale, and ensures Cursor's post-sales motion can match the pace of the sales org. The company is mid-PLG-to-enterprise transition — this hire has to build durable systems while preserving the speed that makes Cursor dangerous.</p>
+      </div>
+      <div class="overview-card">
+        <h4>What success looks like (6–12 months)</h4>
+        <p>GRR trend is positive. A staffed, calibrated ADM team exists. Renewal forecasting is defensible. Strategic accounts have clear coverage plans. The ADM / FE / Sales handoff is clean and no longer ambiguous. Post-sales is a growth lever, not a support function.</p>
+      </div>
+      <div class="overview-card">
+        <h4>What makes this hard at Cursor</h4>
+        <p>Zero playbook to inherit. Developers and CTOs in the same account. Product ships weekly. PLG roots make customers resistant to structured engagement. Constant org ambiguity. Sales scaling fast creates coverage pressure. Enterprise expectations vs startup resourcing.</p>
+      </div>
+      <div class="overview-card">
+        <h4>Key cross-functional dependencies</h4>
+        <p>Sales (commercial alignment, expansion pipeline), Field Engineering (FE / FDE handoffs, technical depth layer), Product (roadmap advocacy, feedback loops), Marketing (customer stories, adoption narratives).</p>
+      </div>
+      <div class="overview-card">
+        <h4>What this leader must build in year one</h4>
+        <p>A staffed, high-bar ADM team. A renewal operating cadence that produces defensible forecasts. Clean ADM / FE / Sales handoffs. Strategic account plans for the top tier. And a post-sales motion that can scale with the sales org without adding friction or headcount linearly.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAPABILITIES -->
+  <div class="section">
+    <div class="section-label">Capabilities Being Tested</div>
+    <div class="cap-grid">
+      <div class="cap-group">
+        <h4>Functional</h4>
+        <span class="cap-tag blue">Renewal + churn rigor</span>
+        <span class="cap-tag blue">GRR / NRR ownership</span>
+        <span class="cap-tag blue">Enterprise account planning</span>
+        <span class="cap-tag blue">Onboarding + adoption strategy</span>
+        <span class="cap-tag blue">Escalation management</span>
+        <span class="cap-tag blue">Post-sales operating cadence</span>
+        <span class="cap-tag blue">Expansion pipeline generation</span>
+        <span class="cap-tag blue">FE / ADM boundary design</span>
+      </div>
+      <div class="cap-group">
+        <h4>Leadership &amp; Scaling</h4>
+        <span class="cap-tag purple">Team hiring + calibration</span>
+        <span class="cap-tag purple">Coaching + performance management</span>
+        <span class="cap-tag purple">Playbook building at speed</span>
+        <span class="cap-tag purple">Org design instincts</span>
+        <span class="cap-tag purple">Burnout prevention</span>
+        <span class="cap-tag purple">Cross-functional influence</span>
+        <span class="cap-tag purple">Talent magnetism</span>
+      </div>
+      <div class="cap-group">
+        <h4>AI Startup Aptitude</h4>
+        <span class="cap-tag teal">Builder mentality</span>
+        <span class="cap-tag teal">Technical fluency (dev tooling)</span>
+        <span class="cap-tag teal">First-principles thinking</span>
+        <span class="cap-tag teal">Ambiguity tolerance</span>
+        <span class="cap-tag teal">Exec presence + multithreading</span>
+        <span class="cap-tag teal">Value-based selling instincts</span>
+        <span class="cap-tag teal">Velocity + execution</span>
+        <span class="cap-tag teal">Thought leadership</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROCESS TABLE -->
+  <div class="section">
+    <div class="section-label">Interview Process Overview</div>
+    <table class="process-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Stage</th>
+          <th>Interviewer</th>
+          <th>Format</th>
+          <th>Duration</th>
+          <th>Primary Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><span class="stage-badge badge-screen">Recruiter Screen</span></td>
+          <td>Heather Torres</td>
+          <td>Chat</td>
+          <td>30 min</td>
+          <td>Motivation, scope, environment match, level calibration</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><span class="stage-badge badge-hm">HM Screen</span></td>
+          <td>Priya Bhatia</td>
+          <td>Chat</td>
+          <td>30 min</td>
+          <td>Post-sales depth, team building, leadership operating style, zero-to-one instincts</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><span class="stage-badge badge-peer">Peer: Technical Acumen</span></td>
+          <td>Pavan Ravipati / Emily Liu</td>
+          <td>Joint Brainstorm</td>
+          <td>30 min</td>
+          <td>Technical fluency, developer empathy, first-principles problem solving</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><span class="stage-badge badge-onsite">Onsite 1: Builder Mentality</span></td>
+          <td>Michael Potteiger / Rohan Chandra</td>
+          <td>Scenario discussion</td>
+          <td>30 min</td>
+          <td>Intellectual curiosity, high agency, account judgment, ambiguity tolerance</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><span class="stage-badge badge-onsite">Onsite 2: Commercial + XFN</span></td>
+          <td>Sales Leader (Robbie / Allison / Allegra)</td>
+          <td>Scenario discussion</td>
+          <td>30 min</td>
+          <td>Sales alignment, expansion instincts, ADM/AE model, exec engagement</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><span class="stage-badge badge-onsite">Onsite 3: FE + Technical Depth</span></td>
+          <td>Diggory Rycroft / Hugo Charre / Nick Bradford / John Gilhuly</td>
+          <td>Scenario discussion</td>
+          <td>30 min</td>
+          <td>FE boundary design, technical product depth, cross-functional rigor</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td><span class="stage-badge badge-pres">Presentation</span></td>
+          <td>Priya Bhatia + Seong</td>
+          <td>45-min presentation + Q&amp;A</td>
+          <td>45 min</td>
+          <td>Leadership maturity, strategic judgment, prioritization, clarity of thought</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ════════════════════════════════════
+       INTERVIEW BLOCKS
+       ════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-label">Detailed Interview Sections</div>
+
+    <!-- ── 1. RECRUITER SCREEN ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">01</div>
+        <div class="interview-title">
+          <h3>Recruiter Screen</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Heather Torres</span>
+            <span class="meta-chip">30 min · Chat</span>
+            <span class="stage-badge badge-screen" style="font-size:11px;padding:3px 9px">Screen</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r1-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r1-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r1-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r1-rubric')">Rubric</button>
+        </div>
+        <div id="r1-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Validate that this is worth the panel's time. Test motivation durability, scope relevance, environment fit, and leadership depth. Surface risks (short stints, scope inflation, PM-adjacent candidates without commercial ownership) before they waste onsite slots.
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Dimensions to assess</div>
+            <div class="cap-tag blue">Motivation for Cursor specifically</div>
+            <div class="cap-tag blue">Relevant post-sales scope</div>
+            <div class="cap-tag blue">Environment match (pace, ambiguity, intensity)</div>
+            <div class="cap-tag blue">Enterprise + technical customer experience</div>
+            <div class="cap-tag blue">Renewals / retention ownership</div>
+            <div class="cap-tag blue">Leadership scope + team management depth</div>
+            <div class="cap-tag blue">Trajectory and level fit</div>
+            <div class="cap-tag blue">Career risk flags</div>
+          </div>
+        </div>
+        <div id="r1-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Motivation + Trajectory</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>What's driving the search right now — and why Cursor specifically versus other AI companies you're looking at?</div>
+              <ul class="question-probes">
+                <li>What do you understand about where Cursor sits in the market?</li>
+                <li>What about this role is different from your current or most recent scope?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>Walk me through the largest team you've directly managed — how you hired, how you structured coverage, and how you handled performance issues when they came up.</div>
+              <ul class="question-probes">
+                <li>What's the hardest management call you've made in the last 12 months?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Post-Sales Depth</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Walk me through the most relevant post-sales work you've done — the customer segment, what you owned end-to-end, and how technical those accounts were.</div>
+              <ul class="question-probes">
+                <li>Did you own renewals commercially, or did an AE or CS manager hold that?</li>
+                <li>How far into the engineering org were your customer relationships?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>What metrics did you run your book against — and which one kept you up at night?</div>
+              <ul class="question-probes">
+                <li>How did you define "at risk" and what was your early warning system?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Environment Match</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Tell me about a time you had to build process where almost nothing existed — what did you build, how fast, and what did you have to leave imperfect?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>What kind of environment brings out your best work — and what kind of environment has historically brought out your worst?</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Signal Checks (flags to probe)</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>Help me understand the move from [Company X] — the tenure looks shorter than your others. What happened there?</div>
+            </div>
+          </div>
+        </div>
+        <div id="r1-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Has a specific, informed take on Cursor's product and market position — not generic AI enthusiasm</li>
+                <li>Can articulate what they owned in renewals vs what lived elsewhere, with no confusion</li>
+                <li>Names real metrics: GRR, NRR, churn rate by segment, time-to-value</li>
+                <li>Shows genuine curiosity about ambiguity — sees it as an advantage, not a blocker</li>
+                <li>Leadership scope is clear and substantive — has managed teams through growth, not just steady state</li>
+                <li>Has worked with engineering-heavy customers — can name a developer persona and an exec persona from the same account</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Motivation is "Cursor seems cool" or "AI is the future" — no specificity</li>
+                <li>Commercial ownership was always someone else's responsibility</li>
+                <li>Post-sales experience is mostly PM-style customer feedback work, not retention and growth</li>
+                <li>Can't name how they measured customer health or risk</li>
+                <li>Management experience is thin or indirect — advisory roles dressed up as team leadership</li>
+                <li>Multiple unexplained short stints without clear narrative</li>
+                <li>Describes pace tolerance but gives examples that sound like structured, predictable environments</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r1-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Motivation for Cursor</td><td class="weak">Generic AI enthusiasm, no product knowledge</td><td class="ok">Aware of Cursor's category, reasonable "why now"</td><td class="exc">Specific thesis on Cursor's enterprise moment, shows they've done real homework</td></tr>
+              <tr><td>Post-sales ownership</td><td class="weak">Commercial ownership lived elsewhere; product-adjacent work only</td><td class="ok">Owned a book, contributed to renewals with sales overlay</td><td class="exc">Full accountability for GRR, churn forecast, expansion pipeline end-to-end</td></tr>
+              <tr><td>Environment match</td><td class="weak">Thrives with structure; describes fast pace but examples are orderly</td><td class="ok">Has been in high-growth; adapted but with some bumps</td><td class="exc">Built orgs from scratch in ambiguous environments; describes what they left imperfect on purpose</td></tr>
+              <tr><td>Technical customer depth</td><td class="weak">Business buyer experience only; developers unfamiliar territory</td><td class="ok">Has worked with technical buyers; some engineering familiarity</td><td class="exc">Deep in engineering orgs — can move fluently from dev to CTO in same account</td></tr>
+              <tr><td>Leadership scope</td><td class="weak">Managed individuals informally or in name only; thin accountability</td><td class="ok">Has led a team through a growth period; knows the basics of hiring and performance</td><td class="exc">Substantive team leadership through scale — hiring, coaching, org design, hard calls — with specific examples</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 2. HM SCREEN ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">02</div>
+        <div class="interview-title">
+          <h3>HM Screen — Functional Expertise + Leadership + Team Building</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Priya Bhatia</span>
+            <span class="meta-chip">30 min · Chat</span>
+            <span class="stage-badge badge-hm" style="font-size:11px;padding:3px 9px">Hiring Manager</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r2-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r2-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r2-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r2-rubric')">Rubric</button>
+        </div>
+        <div id="r2-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Priya gets signal on whether this candidate can actually run the function she needs built — not just manage a steady-state CS org. Key: post-sales depth on renewals and risk, ability to hire and build a team quickly, operating style with sales and field engineering, and whether they can operate as a zero-to-one leader in a fast company.
+          </div>
+        </div>
+        <div id="r2-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">TAM / Deployment Experience</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Tell me about the hardest enterprise deployment you personally led. What made it hard — technically, organizationally, or politically?</div>
+              <ul class="question-probes">
+                <li>What did you own vs what did FE or professional services own?</li>
+                <li>What would have gone wrong if you hadn't been in the room?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>You're running a team of ADMs. One of your accounts — a 2,000-developer company — is three months in and usage has stalled. The AE is already watching the renewal. Walk me through how you'd diagnose and respond.</div>
+              <ul class="question-probes">
+                <li>Who do you pull in and when?</li>
+                <li>What's the story you tell the AE vs the story you tell the customer's CTO?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Building + Scaling Teams</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Describe a team you built from scratch or substantially rebuilt. What was the profile you hired for, how did you source, and what did you get wrong on your first few hires?</div>
+              <ul class="question-probes">
+                <li>How did the profile evolve as the customer base changed?</li>
+                <li>What's the most important thing you look for in an ADM at Cursor's stage?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Tell me about a time someone on your team was burning out or underperforming during a high-growth sprint. What did you do, and what do you wish you'd done earlier?</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Renewals + Operating Rigor</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>If post-sales doesn't own the commercial renewal but is expected to influence it — how do you set up the accountability model so it actually works?</div>
+              <ul class="question-probes">
+                <li>What breaks most often in ADM/AE renewal splits, and how have you fixed it?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>You're asked to forecast renewals for the next quarter. You have 40 accounts. Walk me through the operating cadence you'd want in place to produce a defensible number.</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Zero-to-One + Operating Style</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>If you joined Cursor next month and had to build the post-sales operating foundation in 60 days — not perfect, just load-bearing — what are the three things you'd put in place first and why those three?</div>
+            </div>
+          </div>
+        </div>
+        <div id="r2-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Talks about renewals with commercial fluency — understands GRR, churn cohorts, risk tiers</li>
+                <li>Has a clear, opinionated hiring bar for ADMs and can defend it</li>
+                <li>Operating style with sales feels like genuine partnership, not tension or deference</li>
+                <li>First 60 days answer is specific, prioritized, and explains what they're NOT doing and why</li>
+                <li>Leadership examples show they've coached people through hard transitions, not just managed out</li>
+                <li>Talks about what they'd leave imperfect on purpose — shows prioritization maturity</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Renewal ownership always described as "collaborative" with no personal accountability</li>
+                <li>Team building stories are thin — "I hired great people" with no specifics on profile or sourcing</li>
+                <li>First 60 days is a listening tour — no urgency, no bias to action</li>
+                <li>Sales relationship described as adversarial or "protecting the customer from sales"</li>
+                <li>Burnout/underperformance handling is HR-process-first rather than manager-instinct-first</li>
+                <li>Can't explain what makes an ADM great vs what makes a strong CSM — conflates the roles</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r2-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Renewals rigor</td><td class="weak">Vague; "works with sales"; no metrics ownership</td><td class="ok">Contributed to renewal process; understands risk signals</td><td class="exc">Designed the renewal operating model; ran forecast calls with full commercial accountability</td></tr>
+              <tr><td>Team building</td><td class="weak">Hired by feel; can't articulate profile or what they'd change</td><td class="ok">Has built small teams; knows what they look for; some reflection on mistakes</td><td class="exc">Built and rebuilt teams; clear profile per stage; learning from wrong hires articulated crisply</td></tr>
+              <tr><td>Zero-to-one operating</td><td class="weak">Default to process playbooks; needs clear structure to execute</td><td class="ok">Has operated in ambiguity before with some success</td><td class="exc">Names what to build first and explicitly what to defer — demonstrates prioritization, not just activity</td></tr>
+              <tr><td>Sales alignment</td><td class="weak">Sees tension as inevitable; "protects" customers from sales</td><td class="ok">Works well with AEs; understands commercial objectives</td><td class="exc">Sees post-sales as a commercial growth partner; has designed ADM/AE accountability models that work</td></tr>
+              <tr><td>Leadership quality</td><td class="weak">Task-manager; performance management is process-first</td><td class="ok">Solid coach; handles issues when they surface</td><td class="exc">Anticipates burnout and underperformance; coaching is proactive; builds for the team's long-term trajectory not just current quarter</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 3. PEER: TECHNICAL ACUMEN ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">03</div>
+        <div class="interview-title">
+          <h3>Peer Interview — Technical Acumen + First Principles</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Pavan Ravipati / Emily Liu</span>
+            <span class="meta-chip">30 min · Joint Brainstorm</span>
+            <span class="stage-badge badge-peer" style="font-size:11px;padding:3px 9px">Peer</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r3-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r3-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r3-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r3-rubric')">Rubric</button>
+        </div>
+        <div id="r3-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Test technical credibility in the context Cursor operates in: developer tooling, AI-native workflows, enterprise rollout complexity. This is not a coding screen. The goal is to assess whether this person can think through real problems alongside an engineering team, earn developer trust, and offer practical guidance — not just relay customer feedback.
+          </div>
+        </div>
+        <div id="r3-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Cursor-Specific Technical Problems</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>We're early in user limit controls — the system isn't sophisticated yet. An enterprise customer with 1,500 engineers is hitting limits inconsistently and it's affecting their trust in the product. How would you approach this as the RD — both the customer conversation and the internal advocacy?</div>
+              <ul class="question-probes">
+                <li>What questions do you ask the customer? What questions do you ask product?</li>
+                <li>How do you frame the workaround without promising a timeline you don't own?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A team of 30 engineers has just rolled out Cursor. Feedback is polarized — half love it, half say suggestions feel off or inconsistent. You're brought in to help. What's your first move?</div>
+              <ul class="question-probes">
+                <li>What are the first things you'd look at — is this a configuration issue, an onboarding issue, or a product issue?</li>
+                <li>How do you tell the difference?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>A CISO at a 5,000-person company asks: how do we centrally govern which rules, context, and MCP servers our developers can access — with the ability to approve, revoke, and audit usage? How do you think through that problem with them?</div>
+              <ul class="question-probes">
+                <li>What role does a marketplace or plugin model play in solving governance at that scale?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">AI Product Fluency</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>How do you think about the distinction between the model and the harness when it comes to agents — and why does that matter for how you advise customers?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>When should a developer reach for a Cloud Agent versus a desktop agent? What's the decision logic — and how do you explain that tradeoff to a customer's platform team vs an individual developer?</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Thought Leadership</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>What technical opinion do you hold about AI developer tooling or enterprise AI deployment that most CS or post-sales leaders would disagree with?</div>
+              <ul class="question-probes">
+                <li>Where have you seen conventional deployment wisdom actually backfire?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r3-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Asks clarifying questions before answering — thinks in systems, not scripts</li>
+                <li>Knows the difference between a product gap and a configuration problem and digs in properly</li>
+                <li>Can hold a technical conversation with a platform team or security architect without deflecting to "let me get the SE"</li>
+                <li>Has a real opinion about AI deployment that pushes back on consensus — and can defend it</li>
+                <li>Understands that developer trust is different from executive trust and navigates both</li>
+                <li>Talks about governance with nuance — not just "security is important" but "here's how you architect tiered access at scale"</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Defaults to "I'd escalate to FE" on problems that should be diagnosable at the RD level</li>
+                <li>Technical answers are surface-level; restates the problem without adding insight</li>
+                <li>Doesn't understand the model/harness distinction or conflates them</li>
+                <li>Thought leadership question produces safe, consultant-sounding non-answer</li>
+                <li>Can't articulate what a developer actually cares about that's different from an IT buyer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r3-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Technical fluency</td><td class="weak">Buzzword familiarity only; can't go one level deeper on any topic</td><td class="ok">Comfortable with developer context; can hold a configuration conversation</td><td class="exc">Can architect a governance model, explain agent design tradeoffs, and engage a CISO without an FE in the room</td></tr>
+              <tr><td>Problem framing</td><td class="weak">Jumps to solutions; doesn't ask good diagnostic questions</td><td class="ok">Asks some clarifying questions; generally frames the problem well</td><td class="exc">Immediately structures the problem, identifies what's unknown, and builds toward an answer with the interviewer</td></tr>
+              <tr><td>Developer empathy</td><td class="weak">Treats developers as an IT persona; misses what they actually care about</td><td class="ok">Understands developers want autonomy and minimal friction</td><td class="exc">Can code-switch from developer sensibilities to platform-team sensibilities to CTO priorities in the same account story</td></tr>
+              <tr><td>Thought leadership</td><td class="weak">No real opinions; safe, generic takes</td><td class="ok">Has a view; somewhat differentiated from conventional wisdom</td><td class="exc">Provocative, well-reasoned contrarian take that shows they've thought deeply about the space — not just pattern-matched to common narratives</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 4. ONSITE 1: BUILDER MENTALITY ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">04</div>
+        <div class="interview-title">
+          <h3>Onsite 1 — Intellectual Curiosity + High Agency Builder</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Michael Potteiger / Rohan Chandra</span>
+            <span class="meta-chip">30 min · Scenario Discussion</span>
+            <span class="stage-badge badge-onsite" style="font-size:11px;padding:3px 9px">Onsite</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r4-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r4-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r4-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r4-rubric')">Rubric</button>
+        </div>
+        <div id="r4-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Assess high agency, intellectual curiosity, and account judgment in ambiguous situations. This is the "can they figure it out without being told what to do" interview. Focus on how they think when the right answer isn't obvious, how they handle enterprise complexity at the account level, and whether they have the instincts of a builder vs a manager-of-the-status-quo.
+          </div>
+        </div>
+        <div id="r4-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Account Judgment + Ambiguity</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>You have a strategic account like NVIDIA — massive developer base, sophisticated engineering culture, floods you with feature requests every month. Your ADM is drowning. How do you approach this account differently — structurally and relationally?</div>
+              <ul class="question-probes">
+                <li>How do you manage product feedback velocity from accounts like this without it consuming your team?</li>
+                <li>What does proactive account management look like for an account that already knows what they want?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>HubSpot is a solid account — healthy usage, visible CC love from developers — but the exec sponsor has gone cold and renewal is 90 days out. What's your playbook to re-engage and de-risk the renewal?</div>
+              <ul class="question-probes">
+                <li>What's the narrative you build to take up to VP or C-level?</li>
+                <li>Who do you bring into that conversation and what do they each contribute?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>Tell me about a customer situation where you genuinely didn't know what the right call was. What made it hard, how did you decide, and what would you do differently now?</div>
+              <ul class="question-probes">
+                <li>Was this a technical problem, a relationship problem, or a commercial problem — or all three?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Builder + High Agency Instincts</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Tell me about something you built — a system, a motion, a playbook — that you're genuinely proud of. What problem did it solve that no one else had solved before you?</div>
+              <ul class="question-probes">
+                <li>How did you know it was actually working?</li>
+                <li>What did you have to do to get adoption internally?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>What's a conventional post-sales assumption you've stopped believing in the last 2–3 years — and what replaced it?</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Multithreaded Exec Engagement</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Walk me through a large enterprise account where you built and managed relationships across multiple stakeholders — developer champion, IT/platform team, engineering leadership, and C-suite. How did you keep them all engaged and aligned?</div>
+              <ul class="question-probes">
+                <li>When they were pulling in different directions, how did you navigate that?</li>
+                <li>What's the exec sponsor motion you've found most effective for AI tooling specifically?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r4-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Answers to ambiguous situations are structured, not panicked — they build a diagnostic framework on the fly</li>
+                <li>Can articulate executive value without retreating to usage metrics — talks ROI, engineering velocity, org transformation</li>
+                <li>Builder examples are specific: here's the problem, here's what I designed, here's how I measured it</li>
+                <li>Executive engagement strategy is multithreaded by design — not just "I have a good relationship with the CTO"</li>
+                <li>Knows what not to do as much as what to do — shows prioritization instincts, not just activity</li>
+                <li>Takes intellectual risks — offers a real opinion on what post-sales gets wrong</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Executive engagement story is entirely relationship-based, no structured multithreading</li>
+                <li>Ambiguous situation responses default to "get alignment" or "set up a working group" — no bias to action</li>
+                <li>Builder examples are process-heavy frameworks that sound like borrowed methodology, not original design</li>
+                <li>First principles question produces a safe platitude, not a real opinion</li>
+                <li>Renewal re-engagement plan starts with slides, not with a human conversation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r4-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Account judgment</td><td class="weak">Generic playbook response; doesn't adapt to the account's specific dynamics</td><td class="ok">Contextualizes the situation; gives reasonable approach</td><td class="exc">Immediately identifies the key variable (exec cold vs product issue vs internal politics) and builds a differentiated response around it</td></tr>
+              <tr><td>High agency / bias to action</td><td class="weak">Defers to process or escalation; minimal personal initiative</td><td class="ok">Takes action but within pre-defined guardrails</td><td class="exc">Invents the guardrail when one doesn't exist; acts first, documents second</td></tr>
+              <tr><td>Exec engagement</td><td class="weak">Single-threaded; relies on one champion; no exec mapping strategy</td><td class="ok">Has exec relationships; understands they need more than one</td><td class="exc">Designs a multithreaded stakeholder map; knows what each level cares about and builds a distinct value narrative per persona</td></tr>
+              <tr><td>Builder identity</td><td class="weak">Executes what exists; limited original construction</td><td class="ok">Has adapted playbooks; created some processes from scratch</td><td class="exc">Can show a clear problem-to-solution arc they personally drove — not adapted, not borrowed, built</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 5. ONSITE 2: COMMERCIAL + XFN ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">05</div>
+        <div class="interview-title">
+          <h3>Onsite 2 — Commercial Instincts + Cross-Functional Effectiveness</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Robbie Faibish / Allison Vatz / Allegra Hensley</span>
+            <span class="meta-chip">30 min · Scenario Discussion</span>
+            <span class="stage-badge badge-onsite" style="font-size:11px;padding:3px 9px">Onsite</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r5-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r5-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r5-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r5-rubric')">Rubric</button>
+        </div>
+        <div id="r5-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Test whether this leader can operate as a genuine commercial partner to Sales — not just a customer advocate. Cursor is moving upmarket. Post-sales must drive expansion, support renewals with conviction, and help Sales win in enterprise deals where the initial beachhead was PLG. This interview assesses their value-based selling instincts, their ADM/AE model philosophy, and whether they'll be a collaborative partner or a friction point.
+          </div>
+        </div>
+        <div id="r5-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Expansion + Renewal Motion</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>Cursor is used by one team inside a 10,000-person company. Usage is strong. The AE wants a major expansion conversation in Q2. Walk me through how post-sales contributes to that motion — before, during, and after the expansion discussion.</div>
+              <ul class="question-probes">
+                <li>Who builds the ROI story — ADM, FE, AE, or all three? How does that actually get produced?</li>
+                <li>What signals from the account tell you the organization is ready for a broader conversation?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A renewal is coming up in 60 days and the customer isn't expecting an upsell — but your data shows they've grown 40% beyond their contracted seats. How do you approach the pricing conversation and what's your prep with the AE beforehand?</div>
+              <ul class="question-probes">
+                <li>How do you make sure this doesn't damage the trust the ADM has built?</li>
+                <li>What's your setup process so this surprise doesn't happen the next cycle?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">ADM / AE Model Design</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>What do you see as the ideal ADM / AE relationship model — and where does it most commonly break down? What have you done specifically to fix it?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>What's the most important thing an ADM has to get right to be a genuine growth partner versus a sophisticated support function?</div>
+              <ul class="question-probes">
+                <li>How does that change when the customer base is primarily developers who opted in via PLG, not top-down enterprise deals?</li>
+              </ul>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Value-Based Selling + Executive Engagement</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Tell me about a time you drove a significant expansion or renewal save that required building a value narrative with a CTO or VP Engineering — not just a usage report. What was the story, how did you build it, and how did it land?</div>
+              <ul class="question-probes">
+                <li>What made the value narrative credible to that executive specifically?</li>
+                <li>What did you have to prove beyond "your developers like it"?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A VP Engineering at a strategic account tells you: "We're evaluating alternatives. GitHub Copilot Enterprise is proposing a broader platform story — SSO, audit, compliance. How are you thinking about that?" Walk me through how you handle this conversation.</div>
+              <ul class="question-probes">
+                <li>What do you do before this conversation to prepare?</li>
+                <li>How do you involve the AE without losing the trust you've built with the technical team?</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r5-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Talks about expansion and renewal as growth motions, not risk mitigation exercises</li>
+                <li>Has a crisp view on where ADMs end and AEs begin — and can defend it to a skeptical Sales leader</li>
+                <li>Value narratives they've built speak to engineering velocity, org transformation, and ROI — not just NPS or usage stats</li>
+                <li>Competitive scenario handled with confidence — acknowledges the threat, redirects to value, doesn't get defensive</li>
+                <li>Knows how to set up renewal cycles so surprises don't happen — proactive, not reactive</li>
+                <li>AE partnership language is "we" not "they" — genuine collaborative instinct</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Commercial conversations are AE's job — they "support" but don't lead</li>
+                <li>Value narrative is usage metrics dressed up in a slide — no executive-level business impact framing</li>
+                <li>Competitive scenario triggers defensiveness or "we're just better" — no structured response</li>
+                <li>ADM/AE model is described as "it depends" without any principled framework</li>
+                <li>Can't articulate what post-sales uniquely contributes to expansion vs what Sales contributes</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r5-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Commercial instincts</td><td class="weak">Post-sales is a support function; commercial conversations escalated to AE</td><td class="ok">Understands commercial objectives; contributes to renewal/expansion prep</td><td class="exc">Drives the commercial narrative; knows how to build value stories that convert; treats post-sales as a revenue function</td></tr>
+              <tr><td>ADM/AE model</td><td class="weak">No clear model; defaults to whatever the AE prefers</td><td class="ok">Has a general view; reasonable framework for accountability</td><td class="exc">Has designed and stress-tested an ADM/AE model; can name exactly where it failed before and what they changed</td></tr>
+              <tr><td>Exec-level value selling</td><td class="weak">Usage data only; no executive business narrative</td><td class="ok">Can articulate ROI at a high level; some executive engagement experience</td><td class="exc">Builds CFO/CTO-grade value narratives linking engineering velocity, retention, and productivity to a defensible business case</td></tr>
+              <tr><td>Competitive handling</td><td class="weak">Defensive; no structured response to competitive pressure</td><td class="ok">Stays calm; redirects to Cursor strengths</td><td class="exc">Runs a discovery-first competitive response — identifies what the competitor is actually selling on, addresses the real concern, and repositions without undermining the customer relationship</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 6. ONSITE 3: FE + TECHNICAL DEPTH ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">06</div>
+        <div class="interview-title">
+          <h3>Onsite 3 — FE Boundary Design + Technical Depth</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Diggory Rycroft (ideal) / Hugo Charre / Nick Bradford / John Gilhuly</span>
+            <span class="meta-chip">30 min · Scenario Discussion</span>
+            <span class="stage-badge badge-onsite" style="font-size:11px;padding:3px 9px">Onsite</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r6-purpose')">Purpose</button>
+          <button class="tab-btn" onclick="switchTab(this,'r6-questions')">Questions</button>
+          <button class="tab-btn" onclick="switchTab(this,'r6-signals')">Signals</button>
+          <button class="tab-btn" onclick="switchTab(this,'r6-rubric')">Rubric</button>
+        </div>
+        <div id="r6-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Purpose</strong>
+            Field Engineering is Cursor's technical depth layer. This interview tests whether the RD candidate can design a clean, functional operating boundary between ADMs and FEs — one that lets FE scale without becoming a bottleneck, lets ADMs be consultative without monopolizing technical resources, and produces great customer outcomes. Also tests deeper AI product knowledge: agents, governance, SDKs, extensibility.
+          </div>
+        </div>
+        <div id="r6-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Section 1 — ADM / FE Operating Model</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>Where do you draw the hard line between what your ADMs own and what FE owns — in onboarding, in an active deployment, and in renewal?</div>
+              <ul class="question-probes">
+                <li>What's the failure mode you've seen most often when that line isn't clear?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A deal closes. Walk me through what actually transfers from pre-sales FE to your ADMs post-sale — and what's the failure mode you're specifically guarding against in that handoff?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>An existing customer needs an FE in the room tomorrow to unblock a POC of Cloud Agents. The deal is closing in 5 days. How does that get triaged in your org — and who makes the call?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>One of your ADMs is running 30 trial accounts simultaneously. FE can't dedicate to each one. What does the operating model look like so FE is leveraged, not bottlenecked?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>Give me the last three things your team escalated to FE. Which one shouldn't have been escalated — and what did you do about it?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>If I asked your closest FE counterpart what you're hardest to work with on, what would they say — and would they be right?</div>
+            </div>
+          </div>
+          <div class="q-group">
+            <div class="q-group-label">Section 2 — Technical Product Depth</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>How do you think about the tradeoffs between the Cursor SDK, Automations, and Cloud Agents — when does a customer reach for which?</div>
+              <ul class="question-probes">
+                <li>How does that answer change for a 50-person startup vs a 5,000-person enterprise?</li>
+              </ul>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A 2,000-developer customer asks how to think about skills, hooks, subagents, and MCPs across their org. How do you walk them through it — and what does the ADM own in that conversation vs FE?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>A large strategic customer is deploying self-hosted Cloud Agents — networking, security review, infra complexity. How do ADMs, FE, FDE, and the customer's platform team divide the work? Who holds the thread?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>Cursor ships weekly. How do you keep your ADMs and FE on the same mental model of what the product actually is this month — without consuming all their time in syncs?</div>
+            </div>
+          </div>
+        </div>
+        <div id="r6-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What great looks like</h5>
+              <ul>
+                <li>Has a crisp, principled boundary model between ADM and FE — not "it depends" without a framework</li>
+                <li>Handoff design is specific: what information transfers, who owns it, what the failure mode is</li>
+                <li>Escalation self-awareness is real — admits when their team over-escalates and what they've done to fix it</li>
+                <li>Product depth is enough to make the ADM/FE boundary credible to an FE team that will test it</li>
+                <li>Self-awareness on FE friction is direct and specific — not "I'm a lot to work with" but a concrete, true thing</li>
+                <li>Weekly product change answer is practical — a lightweight system, not a huge enablement program</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>ADM/FE boundary is "FE does the technical stuff, ADMs do the relationship stuff" — too blunt, will break immediately</li>
+                <li>Handoff answer is a process doc or Salesforce field — no human accountability layer</li>
+                <li>Technical depth on SDK/Agents/MCP is thin enough that FEs won't respect the model</li>
+                <li>Self-awareness question produces defensive answer or non-answer</li>
+                <li>Weekly product change answer is "we have a Slack channel" with no signal filtering mechanism</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r6-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>ADM/FE boundary design</td><td class="weak">Vague split; no principled framework; will break under pressure</td><td class="ok">Clear in most scenarios; some grey areas acknowledged</td><td class="exc">Has designed the model, broken it, and rebuilt it — can articulate exactly what failed and what the fix was</td></tr>
+              <tr><td>Escalation management</td><td class="weak">Escalates freely; no filter; FE is de facto first line of defense</td><td class="ok">Has some escalation criteria; works to reduce unnecessary FE requests</td><td class="exc">Has a named filter system; can cite the last thing they de-escalated and how; FE trusts their team's judgment</td></tr>
+              <tr><td>Technical product depth</td><td class="weak">Surface-level familiarity only; can't advise on SDK vs Agents vs Automations tradeoffs</td><td class="ok">Comfortable at the "what is this for" level; would need FE for design questions</td><td class="exc">Deep enough to advise a platform team on architecture decisions without FE; can hold a governance conversation with a CISO</td></tr>
+              <tr><td>Self-awareness (FE relationship)</td><td class="weak">Defensive; no real friction acknowledged; too smooth</td><td class="ok">Acknowledges some tension; gives a reasonable answer</td><td class="exc">Direct, specific, and self-aware — names a real thing, acknowledges it's sometimes fair, describes what they've done to adjust</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 7. PRESENTATION ── -->
+    <div class="interview-block">
+      <div class="interview-header">
+        <div class="interview-num">07</div>
+        <div class="interview-title">
+          <h3>Take-Home Presentation — Leadership, Strategy + First Principles</h3>
+          <div class="meta-row">
+            <span class="meta-chip">Priya Bhatia + Seong</span>
+            <span class="meta-chip">45 min (20 present / 25 Q&amp;A)</span>
+            <span class="stage-badge badge-pres" style="font-size:11px;padding:3px 9px">Presentation</span>
+          </div>
+        </div>
+      </div>
+      <div class="interview-body">
+        <div class="tabs">
+          <button class="tab-btn active" onclick="switchTab(this,'r7-purpose')">Purpose + Prompt</button>
+          <button class="tab-btn" onclick="switchTab(this,'r7-questions')">Q&amp;A Probes</button>
+          <button class="tab-btn" onclick="switchTab(this,'r7-signals')">What Great Looks Like</button>
+          <button class="tab-btn" onclick="switchTab(this,'r7-rubric')">Rubric</button>
+        </div>
+        <div id="r7-purpose" class="tab-panel active">
+          <div class="purpose-box">
+            <strong>Presentation Prompt (to be sent to candidate 48 hours in advance)</strong>
+            Imagine you've just joined Cursor as Regional Director, AI Deployment. You've done your first two weeks of onboarding — you've talked to ADMs, Sales leaders, FEs, and a handful of strategic accounts. You're presenting to the Head of CS and a senior cross-functional leader. We want to hear how you think. Specifically:<br><br>
+            <strong>(1) Diagnosis</strong> — Based on what you've seen, what are the two or three most important things post-sales needs to get right in the next 90 days? Where do you think the biggest risk is?<br><br>
+            <strong>(2) Prioritization</strong> — Given limited resources, what do you actually do first — and what do you deliberately defer? Walk us through your reasoning.<br><br>
+            <strong>(3) ADM Team Build</strong> — What does the right ADM look like for Cursor at this stage? What's the hiring bar, and how do you ramp them fast?<br><br>
+            <strong>(4) Your Point of View</strong> — What's one thing you'd push for that might be controversial or different from how post-sales has traditionally been run?<br><br>
+            <em>Format: 15–20 slides max. We care about clarity of thinking more than deck polish. Come ready to defend every slide.</em>
+          </div>
+        </div>
+        <div id="r7-questions" class="tab-panel">
+          <div class="q-group">
+            <div class="q-group-label">Q&amp;A Probing Questions (use selectively)</div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>You said [X] is the biggest risk. What would have to be true for you to be wrong about that?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-fp">First Principles</span>You said you'd defer [Y]. The Sales leader in this room is worried about [Y] too. Convince them to wait.</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-situational">Situational</span>Your controversial take is [Z]. Priya pushes back: "That's not how we've done it — and here's why." How do you respond?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-diagnostic">Diagnostic</span>If you could only hire two ADMs in the first 60 days, what profiles do you hire — and who do you say no to?</div>
+            </div>
+            <div class="question-item">
+              <div class="question-text"><span class="q-type-badge qt-behavioral">Behavioral</span>What's the one slide in this deck you're least confident in — and what would it take to get conviction there?</div>
+            </div>
+          </div>
+        </div>
+        <div id="r7-signals" class="tab-panel">
+          <div class="signal-grid">
+            <div class="signal-box great">
+              <h5>What exceptional presentations look like</h5>
+              <ul>
+                <li>Diagnosis is opinionated — not "we need to do X, Y, and Z" but "the biggest risk is specifically this and here's why"</li>
+                <li>Prioritization is genuinely hard — they've said no to something important and explained the tradeoff honestly</li>
+                <li>ADM profile is specific and calibrated for Cursor's stage — not a generic "great communicator with technical background"</li>
+                <li>Controversial POV is actually controversial — not "we should be more customer-centric"</li>
+                <li>Q&amp;A: holds the room under pushback — engages the challenge, doesn't cave immediately or dig in defensively</li>
+                <li>Deck is concise and tight — wastes no slides on preamble or bio</li>
+                <li>Can say "I don't know yet" on specific things, paired with "here's how I'd find out"</li>
+              </ul>
+            </div>
+            <div class="signal-box red">
+              <h5>Red flags</h5>
+              <ul>
+                <li>Deck is beautiful but generic — could have been written about any CS org at any SaaS company</li>
+                <li>No real prioritization — everything is "first priority"</li>
+                <li>ADM profile is boilerplate: curious, customer-obsessed, technical — no specificity to Cursor's moment</li>
+                <li>Controversial POV is safe or derivative — no intellectual risk taken</li>
+                <li>Immediate capitulation under pushback — no conviction in their own analysis</li>
+                <li>Over-indexed on headcount requests or org charts before establishing the operating foundation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div id="r7-rubric" class="tab-panel">
+          <table class="rubric-table">
+            <thead><tr><th>Dimension</th><th>Weak</th><th>Acceptable</th><th>Exceptional</th></tr></thead>
+            <tbody>
+              <tr><td>Clarity of thought</td><td class="weak">Meandering; hard to extract the actual point of view</td><td class="ok">Clear structure; main arguments traceable</td><td class="exc">Every slide has one job; the narrative is crisp and builds to a conviction with no wasted material</td></tr>
+              <tr><td>Prioritization judgment</td><td class="weak">Everything urgent; no real tradeoffs made</td><td class="ok">Some prioritization; explains the logic</td><td class="exc">Makes hard choices explicitly; articulates what they're deferring and accepts the risk of that decision with full awareness</td></tr>
+              <tr><td>ADM hiring bar</td><td class="weak">Generic profile; could be any post-sales hire at any company</td><td class="ok">Tailored to Cursor's general context</td><td class="exc">Specific to Cursor's moment: PLG-to-enterprise transition, developer-first culture, weekly product cadence — every criteria choice is justified</td></tr>
+              <tr><td>Leadership presence</td><td class="weak">Defers under pressure; loses the thread in Q&amp;A</td><td class="ok">Holds their ground on most points; stumbles on one or two</td><td class="exc">Engages pushback as a conversation, not a threat — adapts where the pushback is right, holds firm where they have conviction, and knows the difference</td></tr>
+              <tr><td>Thought leadership / POV</td><td class="weak">No original thinking; borrows frameworks without personalizing</td><td class="ok">Some original perspective; informed by real experience</td><td class="exc">A genuinely differentiated POV on how post-sales should operate at an AI-native company — specific, defensible, and willing to be wrong about it</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end section -->
+
+  <!-- FINAL SCORING RUBRIC -->
+  <div class="section">
+    <div class="section-label">Debrief Scorecard Summary</div>
+    <table class="process-table">
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Assessed In</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Motivation for Cursor (durability + specificity)</td><td>Stage 1, 2</td><td>High</td></tr>
+        <tr><td>Renewals / GRR / churn rigor</td><td>Stage 2, 5</td><td>High</td></tr>
+        <tr><td>Enterprise + technical customer credibility</td><td>Stage 3, 4, 6</td><td>High</td></tr>
+        <tr><td>Commercial instincts + sales partnership</td><td>Stage 5</td><td>High</td></tr>
+        <tr><td>Multithreaded exec engagement</td><td>Stage 4, 5</td><td>High</td></tr>
+        <tr><td>Builder mentality / build in ambiguity</td><td>Stage 2, 4, 7</td><td>High</td></tr>
+        <tr><td>ADM/FE boundary design + operating model</td><td>Stage 6</td><td>Medium-High</td></tr>
+        <tr><td>Team hiring judgment + leadership quality</td><td>Stage 2, 7</td><td>High</td></tr>
+        <tr><td>Technical product depth (Cursor-specific)</td><td>Stage 3, 6</td><td>Medium-High</td></tr>
+        <tr><td>Thought leadership + POV</td><td>Stage 3, 7</td><td>Medium</td></tr>
+        <tr><td>Pace / intensity fit</td><td>Stage 1, 2</td><td>Medium</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="footnote">
+    Confidential · Cursor · Revised May 2026 · For panel use only
+  </div>
+
+</div>
+
+<script>
+function switchTab(btn, panelId) {
+  const block = btn.closest('.interview-block');
+  block.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  block.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+</script>
+</body>
+</html>
